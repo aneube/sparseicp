@@ -295,6 +295,7 @@ namespace SICP {
             /// Stopping criteria
             double stop = (X-Xo2).colwise().norm().maxCoeff();
             Xo2 = X;
+            if(par.print_icpn) std::cout << "Cost: " << stop << std::endl;
             if(stop < par.stop) break;
         }
     }

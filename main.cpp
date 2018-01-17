@@ -43,8 +43,11 @@ int main (int argc, char const ** argv)
     ///--- Execute registration
     auto tic = std::chrono::steady_clock::now(); 
         SICP::Parameters pars;
-        pars.p = .5;
-        pars.max_icp = 15;
+        pars.p = 1.5;
+        pars.max_icp = 2500;
+        pars.max_inner = 1;
+        pars.mu = 1.;
+        //pars.use_penalty = true;
         pars.print_icpn = true;
         SICP::point_to_point(vertices_source, vertices_target, pars);
     auto toc = std::chrono::steady_clock::now();
