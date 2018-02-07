@@ -23,12 +23,16 @@ include_directories(${EIGEN3_INCLUDE_DIRS})
 find_package(NanoFlann REQUIRED)
 include_directories(${NANOFLANN_INCLUDE_DIR})
 
+#--- VTK
+find_package(VTK 6.0 REQUIRED)
+include(${VTK_USE_FILE})
+
 #--- Build example
 include_directories(.)
 file(GLOB SOURCES "*.h")
 file(GLOB HEADERS "*.cpp")
 add_executable(sparseicp ${SOURCES} ${HEADERS})
-# target_link_libraries(sparseicp ${LIBRARIES})
+target_link_libraries(sparseicp ${LIBRARIES} ${VTK_LIBRARIES})
 
 if(APPLE OR UNIX)
     #--- Deploy data folder link
