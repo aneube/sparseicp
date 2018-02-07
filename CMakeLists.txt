@@ -24,7 +24,7 @@ find_package(NanoFlann REQUIRED)
 include_directories(${NANOFLANN_INCLUDE_DIR})
 
 #--- VTK
-find_package(VTK 6.0 REQUIRED)
+find_package(VTK REQUIRED)
 include(${VTK_USE_FILE})
 
 #--- Build example

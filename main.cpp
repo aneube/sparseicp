@@ -89,9 +89,10 @@ int main (int argc, char const ** argv)
     auto tic = std::chrono::steady_clock::now(); 
         SICP::Parameters pars;
         pars.p = 1.5;
-        pars.max_icp = 2500;
+        pars.max_icp = 500;
         pars.max_inner = 1;
         pars.mu = 1.;
+        pars.stop = 2e-5;
         //pars.use_penalty = true;
         pars.print_icpn = true;
         SICP::point_to_point(vertices_source, vertices_target, pars);
